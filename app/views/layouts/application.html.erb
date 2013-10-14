@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Phacebook</a>
+		</div>
+		<div class="collapse navbar-collapse navbar-ex8-collapse">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Feed", statuses_path %></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
 
-<%= yield %>
+
+		<%= yield %>
+	</div>
 
 </body>
+
 </html>
