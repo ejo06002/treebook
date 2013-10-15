@@ -1,9 +1,19 @@
 Treebook::Application.routes.draw do
+  
   devise_for :users
 
-  resources :statuses
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register #as lets you use a named helper so now I can use register_path for links
+    get 'login', to: 'devise/sessions#new', as: :login
+    get 'logout', to: 'devise/sessions#destroy', as: :logout
+  end
 
+  resources :statuses #calls actions in the controller
+  get 'feed', to: 'statuses#index', as: :feed
   root :to => "statuses#index"
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
