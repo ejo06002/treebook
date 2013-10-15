@@ -14,19 +14,22 @@
 		<div class="collapse navbar-collapse navbar-ex8-collapse">
 			<ul class="nav navbar-nav">
 				<li><%= link_to "Feed", statuses_path %></li>
-			<% if current_user.present? %>
-				<li><%= link_to "Sign_out", destroy_user_session_path, :method => :delete %>
-			<% else %>
-				<li><%= link_to "Log In", new_user_session_path %></li>
-				<li><%= link_to "Sign Up", new_user_registration_path %></li>
-			<% end %>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<% if current_user.present? %>
+					<li><%= link_to current_user.full_name, edit_user_registration_path %>
+					<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+				<% else %>
+					<li><%= link_to "Log In", new_user_session_path %></li>
+					<li><%= link_to "Sign Up", new_user_registration_path %></li>
+				<% end %>
 			</ul>
 
 		</div>
 	</nav>
 	<div class="container">
 
-		<p class="notice" padding=50px><%= notice %></p>
+		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 
 
