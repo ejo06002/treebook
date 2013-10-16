@@ -5,7 +5,18 @@ gem 'rails', '3.2.14'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+#need to change dependency for sqlite3 for deployment on heroku
+group :development, :test do
+	gem 'sqlite3'
+end
+
+group :production do
+
+end
+	
+
+
+#devise and simple_form
 gem 'devise'
 gem 'simple_form'
 
