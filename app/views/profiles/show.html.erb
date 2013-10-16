@@ -1,0 +1,16 @@
+<div class="header">
+	<h1><%= @user.full_name %></h1>
+</div>
+
+<%= link_to "New Status", new_status_path, class: "btn btn-primary" %>
+
+<% if @statuses %>
+	<% @statuses.each do |status| %>
+		<div class ="well">
+			<%= status.content %><hr/>
+			<%= status.user.full_name %>  |
+			<%= link_to time_ago_in_words(status.created_at) + " ago", status_path(status) %>
+
+		</div>
+	<% end %>
+<% end %>
