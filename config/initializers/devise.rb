@@ -251,5 +251,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
   #updated for heroku
-  config.secret_key = '-- secret key --'
+  #config.secret_key = '-- secret key --'
+
+  
 end

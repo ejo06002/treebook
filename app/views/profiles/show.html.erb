@@ -1,9 +1,11 @@
 <div class="header">
 	<h1><%= @user.full_name %></h1>
 </div>
+<hr>
 
 <%= link_to "New Status", new_status_path, class: "btn btn-primary" %>
-
+</br>
+</br>
 <% if @statuses %>
 	<% @statuses.each do |status| %>
 		<div class ="well">
