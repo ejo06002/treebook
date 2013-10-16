@@ -10,10 +10,6 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
-group :production do
-
-end
-	
 
 
 #devise and simple_form
